@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.naayee.naayeeclient">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+
+    <application
+        android:name=".codes.NaayeeApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/naayee1"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/naayee1"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NaayeeClient"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".codes.activity.BookingDetailsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".codes.activity.ServiceBookingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".codes.activity.ShopProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".codes.activity.SubCategoryShopList"
+            android:exported="false" />
+        <activity
+            android:name=".codes.activity.SubCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".codes.activity.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".codes.activity.VerificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".codes.activity.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".codes.activity.SplashScreen"
+            android:exported="true"
+            android:theme="@style/Theme.NaayeeClient.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".codes.activity.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.razorpay.RzpTokenReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="rzp.device_token.share" />
+            </intent-filter>
+        </receiver> <!-- razor pay explicitly targeted to android sdk 31 -->
+        <activity
+            android:name="com.razorpay.CheckoutActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@style/CheckoutTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <data
+                    android:host="rzp.io"
+                    android:scheme="io.rzp" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_bxfx9IDli1TxfS" />
+    </application>
+
+</manifest>

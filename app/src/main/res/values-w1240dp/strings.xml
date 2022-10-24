@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="please_fill_the_booking_details">Please fill the booking details</string>
+    <string name="mobile_no">Mobile No</string>
+    <string name="select_payment_mode">Select Payment Mode</string>
+    <string name="confirm_amp_book_now"><![CDATA[Confirm & Book Now]]></string>
+    <string name="terms_amp_condition"><![CDATA[Terms & Condition]]></string>
+</resources>
